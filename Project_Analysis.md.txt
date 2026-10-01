@@ -197,3 +197,42 @@ PV represents the budgeted value of work planned to be completed.
 
 ```text
 PV = Planned Cost × Planned Progress
+## 20. Business Insights
+
+The dashboard is designed to translate construction project data into actionable management information.
+
+### Cost Performance
+
+Cost variance analysis compares planned and actual expenditure and helps identify projects or activities where spending differs from the baseline.
+
+CPI provides an additional measure of cost efficiency by comparing earned value with actual cost.
+
+### Schedule Performance
+
+Planned versus actual progress and duration analysis helps identify activities that are falling behind schedule.
+
+SPI provides a standardized measure of schedule efficiency and allows project performance to be monitored over time.
+
+### Activity Risk
+
+Activity-level delay analysis can identify construction categories and building levels associated with higher schedule delays.
+
+This allows project teams to investigate potential operational causes rather than relying only on project-level averages.
+
+### Labor Productivity
+
+Labor hours are compared with actual progress to provide an indication of workforce utilization.
+
+Further analysis can be performed by worker type, project, construction category, and time period.
+
+### Material Utilization
+
+Planned and actual material quantities are compared to identify quantity variances.
+
+This can support investigation of material overconsumption, inaccurate planning assumptions, or changes in construction requirements.
+
+### Integrated Project Monitoring
+
+Combining cost, schedule, labor, material, and EVM metrics provides a more comprehensive view of project performance than analyzing each dimension independently.
+
+The dashboard is therefore structured to support both high-level project monitoring and detailed operational investigation.
