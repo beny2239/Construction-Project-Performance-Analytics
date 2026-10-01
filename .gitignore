@@ -1,0 +1,14 @@
+# Power BI temporary files
+*.pbi
+*.tmp
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+
+# Auto recovery files
+~$*
