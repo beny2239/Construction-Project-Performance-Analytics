@@ -1,0 +1,199 @@
+# Construction Project Performance Analysis
+
+## 1. Project Objective
+
+This project demonstrates a data analytics workflow for monitoring construction project performance using SQL Server and Power BI.
+
+The analysis combines project schedules, activity progress, costs, materials, labor data, and Earned Value Management (EVM) metrics to evaluate project performance from cost, schedule, productivity, and risk perspectives.
+
+---
+
+## 2. Business Questions
+
+The analysis was designed to answer the following questions:
+
+- Are projects progressing according to plan?
+- Which activities are delayed?
+- How significant are schedule delays?
+- Are actual costs higher or lower than planned costs?
+- Which cost categories contribute most to project expenditure?
+- Are material quantities aligned with planned quantities?
+- How much labor is being used?
+- How does labor utilization relate to project progress?
+- Are projects performing efficiently from a cost perspective?
+- Are projects ahead or behind schedule?
+- Which projects require closer monitoring?
+
+---
+
+## 3. Dataset
+
+The project database contains the following tables:
+
+### Projects
+Contains project-level information including:
+
+- Project ID
+- Project name
+- Project type
+- Location
+- Start date
+- Planned end date
+- Budget
+- Client
+
+### Activities
+
+Contains construction activity information including:
+
+- Activity
+- Category
+- Building level
+- Planned and actual dates
+- Planned and actual duration
+- Planned and actual cost
+
+### Progress
+
+Contains planned and actual progress measurements over time.
+
+### Costs
+
+Contains cost transactions categorized into:
+
+- Material
+- Labor
+- Equipment
+- Subcontractor
+- Other
+
+### Materials
+
+Contains planned and actual material quantities and unit costs.
+
+### Workers
+
+Contains:
+
+- Worker type
+- Number of workers
+- Working hours
+- Labor cost
+
+### DimDate
+
+A dedicated date dimension used for time-based analysis in Power BI.
+
+---
+
+## 4. Data Model
+
+The analytical model follows a relational structure centered around construction projects and activities.
+
+Main relationships include:
+
+- Projects → Activities
+- Activities → Progress
+- Activities → Costs
+- Activities → Materials
+- Activities → Workers
+- DimDate → Progress
+- DimDate → Costs
+- DimDate → Materials
+- DimDate → Workers
+
+Single-direction relationships were used to maintain predictable filter propagation.
+
+---
+
+## 5. SQL Analysis
+
+SQL Server was used for data storage, relational modeling, and analytical querying.
+
+The SQL workflow includes:
+
+1. Database creation
+2. Table creation
+3. Data insertion
+4. Analytical queries
+
+SQL was used to prepare and validate the underlying construction project data before visualization in Power BI.
+
+---
+
+## 6. Power BI Analysis
+
+The Power BI report contains four analytical pages.
+
+### Page 1 — Project Overview
+
+Provides a high-level overview of:
+
+- Project budget
+- Planned cost
+- Actual cost
+- Cost variance
+- Planned progress
+- Actual progress
+- Activity completion
+
+It also provides project-level cost and progress comparisons.
+
+### Page 2 — Schedule & Progress
+
+Focuses on schedule performance.
+
+Key indicators include:
+
+- Total activities
+- Completed activities
+- Delayed activities
+- Average delay days
+- Planned vs actual duration
+- Delay by construction category
+- Progress by building level
+
+### Page 3 — Cost & Materials
+
+Focuses on financial and material performance.
+
+Key indicators include:
+
+- Planned cost
+- Actual cost
+- Cost variance
+- Cost variance percentage
+- Material cost
+- Labor cost
+- Planned material quantity
+- Actual material quantity
+- Material quantity variance
+
+### Page 4 — Productivity & Risk
+
+Combines workforce productivity with project performance indicators.
+
+Key indicators include:
+
+- Labor hours
+- Worker count
+- Worker labor cost
+- Activity delay rate
+- CPI
+- SPI
+- Project health
+- Delay by category
+- Delay by building level
+
+---
+
+## 7. Earned Value Management
+
+Earned Value Management (EVM) was implemented to evaluate both cost and schedule performance.
+
+### Planned Value
+
+PV represents the budgeted value of work planned to be completed.
+
+```text
+PV = Planned Cost × Planned Progress
